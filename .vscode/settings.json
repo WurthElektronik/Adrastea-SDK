@@ -1,0 +1,26 @@
+{
+
+    "toolchains.mcu_build_tools": "<Path_to_your_mcu_build_tools>",
+    "toolchains.arm_toolchain": "<Path_of_arm_toolchain>",
+    "terminal.integrated.env.windows": {
+        "cortex-debug.JLinkGDBServerPath": "<Path_to_your>\\JLinkGDBServer.exe",
+        "cortex-debug.armToolchainPath": "<Path_to_your>\\gcc-arm-none-eabi-10.3-2021.07\\bin",
+        "cortex-debug.armGdbPath": "<Path_to_your>\\gcc-arm-none-eabi-10.3-2021.07\\bin",
+        "cortex-debug.openocdPath": "<Path_to_your>\\gnu-mcu-eclipse-openocd-0.10.0-8-20180512-1921-win64\\GNU MCU Eclipse\\OpenOCD\\0.10.0-8-20180512-1921\\bin",
+        "cortex-debug.showDevDebugOutput": "true"
+    },
+    
+    "terminal.integrated.env.linux": {
+        "cortex-debug.JLinkGDBServerPath": "<Path_to_your>/JLinkGDBServer",
+        "cortex-debug.armToolchainPath": "<Path_to_your>/gcc-arm-none-eabi",
+        "cortex-debug.openocdPath": "<Path_to_your>/openocd",
+        "cortex-debug.showDevDebugOutput": "true"
+    },
+    
+    "editor.folding": true,
+    "editor.foldingStrategy": "auto",
+    "editor.foldImports": true,
+    "python.defaultInterpreterPath": "<python2.7_path>"
+    
+}
+

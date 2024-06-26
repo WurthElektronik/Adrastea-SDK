@@ -1,0 +1,17 @@
+version: "3"
+services:
+  dev-image:
+    image:  ${IMAGE_TAG}:${IMAGE_VERSION}
+    privileged: true
+    stdin_open: true
+    tty: true
+    ports:
+      - "8081:8081"
+    container_name: dev_env_analyze
+    environment:
+      - DISPLAY=host.docker.internal:0.0
+    volumes:
+     - ../../:/${WORK_DIR}
+    command: >
+        bash -c " dos2unix -q ./shell/linux/*.sh && ./shell/linux/analyze.sh"
+

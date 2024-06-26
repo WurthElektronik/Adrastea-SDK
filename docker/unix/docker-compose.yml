@@ -1,0 +1,15 @@
+version: "3"
+services:
+  dev-image:
+    image: ${IMAGE_TAG}:${IMAGE_VERSION}
+    privileged: true
+    stdin_open: true
+    tty: true
+    container_name: dev_env
+    environment:
+      - env1=none
+    volumes:
+     - ../../:/${WORK_DIR}
+    network_mode: "host"
+    command: '/bin/bash'
+    

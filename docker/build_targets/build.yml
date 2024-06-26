@@ -1,0 +1,18 @@
+version: "3"
+services:
+  dev-image:
+    image:  ${IMAGE_TAG}:${IMAGE_VERSION}
+    privileged: true
+    stdin_open: true
+    container_name: dev_env_docker
+    deploy:
+      resources:
+        limits:
+          memory: 16G # Set to the memory limit you want
+          cpus: '4.0'
+        reservations:
+          memory: 16GB # Set the minimum memory reservation
+    volumes:
+     - ../../:/${WORK_DIR}
+    command: >
+          bash -c " dos2unix -q ./shell/linux/*.sh && ./shell/linux/build.sh"

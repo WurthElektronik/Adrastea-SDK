@@ -1,0 +1,65 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "Debug_With_cloud_Settings",
+            "cwd": "${workspaceRoot}",
+            "executable": "${input:executableName}",
+            "request": "launch",
+            "type": "cortex-debug",
+            "showDevDebugOutput": "raw",
+            "servertype": "openocd",
+            "preLaunchTask": "Local-Debug_mcu_cloud_params",
+            "serverArgs": [
+                "-c",
+                "transport select jtag",
+                "-f",
+                "${workspaceRoot}/sdk/Sony/version2_2/altair_mcu/SDK/utils/ALT125x.cfg"
+            ],
+            "gdbPath": "arm-none-eabi-gdb",
+            "configFiles": [
+                "interface/jlink.cfg"
+            ],
+            "runToEntryPoint": "main",
+            "postRestartCommands": [
+                "break main",
+                "continue"
+            ]
+        },
+        {
+            "name": "Debug_Firmware_Only",
+            "cwd": "${workspaceRoot}",
+            "executable": "${input:executableName}",
+            "request": "launch",
+            "type": "cortex-debug",
+            "showDevDebugOutput": "raw",
+            "servertype": "openocd",
+            "preLaunchTask": "local_debug_mcu",
+            "serverArgs": [
+                "-c",
+                "transport select jtag",
+                "-f",
+                "${workspaceRoot}/sdk/Sony/version2_2/altair_mcu/SDK/utils/ALT125x.cfg"
+            ],
+            "gdbPath": "arm-none-eabi-gdb",
+            "configFiles": [
+                "interface/jlink.cfg"
+            ],
+            "runToEntryPoint": "main",
+            "postRestartCommands": [
+                "break main",
+                "continue"
+            ]
+        }
+
+    ],
+    "inputs": [
+        {
+            "id": "executableName",
+            "type": "promptString",
+            "description": "Enter the name of the executable",
+            "default": "${workspaceRoot}/ALT1250/adrastea_sensor_app.elf"
+        }
+    ]
+}
