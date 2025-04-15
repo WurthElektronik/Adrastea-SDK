@@ -1,0 +1,12 @@
+{
+  "version": "1.0",
+  "cloud_type": "AWS",
+  "client_id": "ADRASTEA-I-132013797-359100540137978_FW",
+  "endpoint_url": "a2m4kdan3jizyu-ats.iot.eu-north-1.amazonaws.com",
+  "subscribe_topics": [
+    "myadrastea/#"
+  ],
+  "publish_topic": "myadrastea/sensors",
+  "keep_alive_time": "1200",
+  "Qos": "1"
+}

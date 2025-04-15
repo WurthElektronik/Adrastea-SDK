@@ -1,0 +1,12 @@
+version: "3"
+services:
+  dev-image:
+    image:  ${IMAGE_TAG}:${IMAGE_VERSION}
+    privileged: true
+    stdin_open: true
+    tty: true
+    container_name: dev_env_docker
+    volumes:
+     - ../../:/${WORK_DIR}
+    command: >
+        bash -c " top "

@@ -1,0 +1,79 @@
+// /*
+//  ***************************************************************************************************
+//  * Würth Elektronik eiSos GmbH & Co. KG
+//  * https://www.we-online.com
+//  *
+//  * THE SOFTWARE INCLUDING THE SOURCE CODE IS PROVIDED “AS IS”. YOU ACKNOWLEDGE THAT WÜRTH ELEKTRONIK
+//  * EISOS MAKES NO REPRESENTATIONS AND WARRANTIES OF ANY KIND RELATED TO, BUT NOT LIMITED
+//  * TO THE NON-INFRINGEMENT OF THIRD PARTIES’ INTELLECTUAL PROPERTY RIGHTS OR THE
+//  * MERCHANTABILITY OR FITNESS FOR YOUR INTENDED PURPOSE OR USAGE. WÜRTH ELEKTRONIK EISOS DOES NOT
+//  * WARRANT OR REPRESENT THAT ANY LICENSE, EITHER EXPRESS OR IMPLIED, IS GRANTED UNDER ANY PATENT
+//  * RIGHT, COPYRIGHT, MASK WORK RIGHT, OR OTHER INTELLECTUAL PROPERTY RIGHT RELATING TO ANY
+//  * COMBINATION, MACHINE, OR PROCESS IN WHICH THE PRODUCT IS USED. INFORMATION PUBLISHED BY
+//  * WÜRTH ELEKTRONIK EISOS REGARDING THIRD-PARTY PRODUCTS OR SERVICES DOES NOT CONSTITUTE A LICENSE
+//  * FROM WÜRTH ELEKTRONIK EISOS TO USE SUCH PRODUCTS OR SERVICES OR A WARRANTY OR ENDORSEMENT
+//  * THEREOF
+//  *
+//  * THIS SOURCE CODE IS PROTECTED BY A LICENSE.
+//  * FOR MORE INFORMATION PLEASE CAREFULLY READ THE LICENSE AGREEMENT FILE (license_terms_wsen_sdk.pdf)
+//  * LOCATED IN THE ROOT DIRECTORY OF THIS DRIVER PACKAGE.
+//  *
+//  * COPYRIGHT (c) 2024 Würth Elektronik eiSos GmbH & Co. KG
+//  *
+//  ***************************************************************************************************
+//  */
+
+/**
+ * @file hal_config.h
+ * @brief Configuration header for the Hardware Abstraction Layer (HAL).
+ *
+ * This file contains configuration settings and definitions for the HAL.
+ *
+ */
+#ifndef HAL_CONFIG_H_
+#define HAL_CONFIG_H_
+
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
+#define HAL_MODULE_ENABLED_ALT1250
+/* #define HAL_ADC_MODULE_ENABLED   */
+/* #define HAL_CEC_MODULE_ENABLED   */
+/* #define HAL_COMP_MODULE_ENABLED   */
+/* #define HAL_CRC_MODULE_ENABLED   */
+/* #define HAL_CRYP_MODULE_ENABLED   */
+/* #define HAL_DAC_MODULE_ENABLED   */
+/* #define HAL_EXTI_MODULE_ENABLED   */
+/* #define HAL_FDCAN_MODULE_ENABLED   */
+/* #define HAL_HCD_MODULE_ENABLED   */
+#define HAL_I2C_MODULE_ENABLED_ALT1250
+/* #define HAL_I2S_MODULE_ENABLED   */
+/* #define HAL_IWDG_MODULE_ENABLED   */
+/* #define HAL_IRDA_MODULE_ENABLED   */
+/* #define HAL_LPTIM_MODULE_ENABLED   */
+/* #define HAL_PCD_MODULE_ENABLED   */
+/* #define HAL_RNG_MODULE_ENABLED   */
+/* #define HAL_RTC_MODULE_ENABLED   */
+/* #define HAL_SMARTCARD_MODULE_ENABLED   */
+/* #define HAL_SMBUS_MODULE_ENABLED    */
+// #define HAL_SPI_MODULE_ENABLED_ALT1250
+/* #define HAL_TIM_MODULE_ENABLED   */
+#define HAL_UART_MODULE_ENABLED_ALT1250
+  /* #define HAL_USART_MODULE_ENABLED   */
+  /* #define HAL_WWDG_MODULE_ENABLED   */
+  // #define HAL_GPIO_MODULE_ENABLED
+  // #define HAL_EXTI_MODULE_ENABLED
+  // #define HAL_DMA_MODULE_ENABLED
+  // #define HAL_RCC_MODULE_ENABLED
+  #define HAL_FLASH_MODULE_ENABLED
+  // #define HAL_PWR_MODULE_ENABLED
+  // #define HAL_CORTEX_MODULE_ENABLED
+
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* HAL_CONFIG_H_ */

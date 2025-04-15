@@ -1,0 +1,10 @@
+ {
+    "version": "2.0", 
+        "cloud_type":"AZURE", 
+        "device_id":"adrastea_featherwing", 
+        "iot_hub_name": "adrastea-iot-design-kit",
+		"api_version" : "2021-04-12", 
+        "port_number" : "8883",
+        "keep_alive_time":"1200", 
+        "Qos":"1" 
+}

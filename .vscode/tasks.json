@@ -1,0 +1,155 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Docker-Start_Docker",
+      "type": "shell",
+      "command": "${workspaceFolder}/docker/unix/docker_run.sh",
+      "windows": {
+        "command": "${workspaceFolder}\\docker\\windows\\docker_run.cmd"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Docker-Start_Docker_debugger",
+      "type": "shell",
+      "command": "${workspaceFolder}/docker/unix/xxx.sh",
+      "windows": {
+        "command": "${workspaceFolder}\\docker\\windows\\docker_segger_jlink_start.cmd"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Local-Clean",
+      "type": "shell",
+      "command": "${workspaceFolder}/shell/linux/clean.sh",
+      "windows": {
+        "command": "${workspaceFolder}\\shell\\windows\\clean.cmd"
+      },
+      "options": {
+        "env": {
+          "PATH": "${config:toolchains.mcu_build_tools};${config:toolchains.arm_toolchain};${env:PATH}"
+        }
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Local-Build",
+      "type": "shell",
+      "command": "${workspaceFolder}/shell/linux/build.sh",
+      "windows": {
+        "command": "${workspaceFolder}\\shell\\windows\\compile.cmd"
+      },
+      "options": {
+        "env": {
+          "PATH": "${config:toolchains.mcu_build_tools};${config:toolchains.arm_toolchain};${env:PATH}"
+        }
+      },
+      "problemMatcher": []
+    },
+    
+    {
+      "label": "Local-Flash_cloud_config",
+      "type": "shell",
+      "command": "${workspaceFolder}/shell/flash_cloud_config.sh",
+      "windows": {
+        "command": "${workspaceFolder}\\shell\\windows\\flash_cloud_config.cmd"
+      },
+      // "dependsOn" : "local_debug_mcu", //Erase the entire flash
+      "problemMatcher": []
+    },
+    
+    {
+      "label": "Local-Debug_mcu",
+      "type": "shell",
+      "command": "${workspaceFolder}/shell/linux/debugmcu.sh",
+      "windows": {
+        "command": "${workspaceFolder}/shell/windows/debugmcu.cmd"
+      },
+      "problemMatcher": []
+  
+    },
+    {
+      "label": "Local-Debug_mcu_cloud_params",
+      "type": "shell",
+      "command": "${workspaceFolder}/shell/linux/debugmcu_cloudParams.sh",
+      "windows": {
+        "command": "${workspaceFolder}\\shell\\windows\\debugmcu_cloudParams.cmd"
+      },
+      "problemMatcher": []
+  
+    },
+    {
+      "label": "Local-Flash_MCU",
+      "type": "shell",
+      "command": "${workspaceFolder}/shell/linux/flash.sh",
+      "windows": {
+        "command": "${workspaceFolder}\\shell\\windows\\flash.cmd"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Docker-Clean_build",
+      "type": "shell",
+      "command": "docker-compose -f ${workspaceFolder}/docker/build_targets/build.yml up ",
+      "windows": {
+        "command": "${workspaceFolder}\\docker\\windows\\env.cmd && docker-compose -f ${workspaceFolder}/docker/build_targets/clean.yml up && docker-compose -f ${workspaceFolder}/docker/build_targets/build.yml up"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Docker-Source_analyze",
+      "type": "shell",
+      "command": "docker-compose -f ${workspaceFolder}/docker/build_targets/analyze.yml up ",
+      "windows": {
+        "command": "${workspaceFolder}\\docker\\windows\\env.cmd && docker-compose -f ${workspaceFolder}/docker/build_targets/analyze.yml up "
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Docker-Grafana-Dashboard",
+      "type": "shell",
+      "command": "docker-compose -f ${workspaceFolder}/docker/build_targets/grafana.yml up ",
+      "windows": {
+        "command": "${workspaceFolder}\\docker\\windows\\env.cmd && docker-compose -f ${workspaceFolder}/docker/build_targets/grafana.yml up "
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Docker-Build",
+      "type": "shell",
+      "command": "docker-compose -f ${workspaceFolder}/docker/build_targets/build.yml up ",
+      "windows": {
+        "command": "${workspaceFolder}\\docker\\windows\\env.cmd && docker-compose -f ${workspaceFolder}/docker/build_targets/build.yml up "
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Docker-Create_doxygen_docs",
+      "type": "shell",
+      "command": "docker-compose -f ${workspaceFolder}/docker/build_targets/docs.yml up ",
+      "windows": {
+        "command": "${workspaceFolder}\\docker\\windows\\env.cmd && docker-compose -f ${workspaceFolder}/docker/build_targets/docs.yml up "
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Docker-Clean",
+      "type": "shell",
+      "command": "docker-compose -f ${workspaceFolder}/docker/build_targets/clean.yml up ",
+      "windows": {
+        "command": "${workspaceFolder}\\docker\\windows\\env.cmd && docker-compose -f ${workspaceFolder}/docker/build_targets/clean.yml up "
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Docker-Flash_mcu",
+      "type": "shell",
+      "command": "${workspaceFolder}/shell/linux/flash.sh",
+      "windows": {
+        "command": "${workspaceFolder}/shell/windows/flash.cmd "
+      },
+      "problemMatcher": []
+    }
+  ]
+}

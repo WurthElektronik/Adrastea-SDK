@@ -1,0 +1,9 @@
+[submodule "sdk/Sony/version2_2/altair_mcu"]
+	path = sdk/Sony/version2_2/altair_mcu
+	url = https://github.com/sonydevworld/altair_mcu.git
+[submodule "libraries/FeatherWings"]
+	path = libraries/FeatherWings
+	url = https://github.com/WurthElektronik/FeatherWings.git
+[submodule "sdk/WuerthElektronik/Sensor/Sensors-SDK_STM32"]
+	path = sdk/WuerthElektronik/Sensor/Sensors-SDK_STM32
+	url = https://github.com/WurthElektronik/Sensors-SDK_STM32.git

@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  mosquitto:
+    image: ${IMAGE_TAG_ECLIPSE_MOSQUITTO}:${IMAGE_VERSION_ECLIPSE_MOSQUITTO}
+    container_name: mosquitto
+    networks:
+      - iot_monitoring_network
+    ports:
+      - "1883:1883"
+    volumes:
+      - ../dashboard_configurations/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+
+
+  influxdb:
+    image: ${IMAGE_TAG_INFLUXDB}:${IMAGE_VERSION_INFLUXDB}
+    container_name: influxdb
+    networks:
+      - iot_monitoring_network
+    ports:
+      - "8086:8086"
+    environment:
+      - INFLUXDB_DB=mqtt_data
+      - INFLUXDB_ADMIN_USER=admin
+      - INFLUXDB_ADMIN_PASSWORD=admin123
+
+  telegraf:
+    image: ${IMAGE_TAG_TELEGRAF}:${IMAGE_VERSION_TELEGRAF}
+    container_name: telegraf
+    networks:
+      - iot_monitoring_network
+    volumes:
+      - ../dashboard_configurations/telegraf.conf:/etc/telegraf/telegraf.conf:ro
+    depends_on:
+      - mosquitto
+      - influxdb
+
+  grafana:
+    image: ${IMAGE_TAG_GRAFANA}:${IMAGE_VERSION_GRAFANA}
+    container_name: grafana
+    networks:
+      - iot_monitoring_network
+    ports:
+      - "3000:3000"
+    depends_on:
+      - influxdb
+  
+networks:
+  iot_monitoring_network:
+    driver: bridge

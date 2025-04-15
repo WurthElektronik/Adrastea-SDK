@@ -1,0 +1,13 @@
+{
+   "version":"6.0",
+   "cloud_type":"MOSQUITTO_TLS",
+   "client_id":"adrastea",
+    "endpoint_url":"test.mosquitto.org",
+    "port_number":"8884",
+    "subscribe_topics":[
+        "adrastea/#"
+    ],
+    "publish_topic":"adrastea/sensors",
+    "keep_alive_time":"1200",
+    "Qos":"1"
+}
