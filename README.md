@@ -3,6 +3,7 @@
 ![Alt text](docs/general/images/image.png)
 - [Adrastea-I SDK](#adrastea-i-sdk)
 - [About](#about)
+- [Cloning the Repository](#cloning-the-repository)
 - [Features Used by This SDK](#features-used-by-this-sdk)
 - [Prerequisites](#prerequisites)
   - [Prerequisite: Access to the Sony Altair SDK](#prerequisite-access-to-the-sony-altair-sdk)
@@ -44,6 +45,20 @@ Adrastea-I includes a fully integrated global navigation satellite system soluti
 >A [separate repository](https://github.com/WurthElektronik/Adrastea-FeatherWing-Kit) which step by step instructions to take Adrastea-I FeatherWing kit into operation can be found under, 
 > https://github.com/WurthElektronik/Adrastea-FeatherWing-Kit
 
+# Cloning the Repository
+
+To get started, you'll need to clone this repository to your local machine. Follow the steps below:
+
+1. **Install Git**  
+   If you don't have Git installed, you can download it from [git-scm.com](https://git-scm.com/).
+
+2. **Clone the Repository**  
+   Open a terminal and run the following command:
+
+   ```bash
+    git clone --recurse-submodules https://github.com/WurthElektronik/Adrastea-SDK.git
+    git submodule sync
+  
 # Features Used by This SDK
 
 This SDK enables customers to develop applications for Adrastea, allowing them to take advantage of Würth eiSos Sensor SDK capabilities.
