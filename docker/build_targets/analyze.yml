@@ -13,5 +13,5 @@ services:
     volumes:
      - ../../:/${WORK_DIR}
     command: >
-        bash -c " ./shell/linux/analyze.sh"
+        bash -c " dos2unix -q ./shell/linux/*.sh && ./shell/linux/analyze.sh"
 

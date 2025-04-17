@@ -3,6 +3,7 @@ services:
   dev-image:
     image:  ${IMAGE_TAG}:${IMAGE_VERSION}
     privileged: true
+    stdin_open: true
     container_name: dev_env_docker
     deploy:
       resources:
@@ -14,4 +15,4 @@ services:
     volumes:
      - ../../:/${WORK_DIR}
     command: >
-        bash -c " ./shell/linux/build.sh"
+          bash -c " dos2unix -q ./shell/linux/*.sh && ./shell/linux/build.sh"
